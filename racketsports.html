@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OutDoor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  </head>
+  <body>
+
+    <header>
+     <a href="index.html" class="brand">OutDoor</a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+            <a href="ballsports.html">Ball Sports</a>
+            <a href="racketsports.html">Racket Sports</a>
+            <a href="strength.html">Strength Training</a>
+            <a href="cardio.html">Cardio Training</a>
+            <a href="LoginNew.html">Login</a>
+          </div>
+      </div>
+    </header>
+
+    <section class="home">
+      <video class="video-slide active" src="FortniteBob.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="fortnitefall.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="fortniterun.mp4" autoplay muted loop></video>
+      <div class="content active">
+        <h1>Tennis.<br></h1>
+        <p>Was your last memories of tennis, accidentally flinging your wii controller on the tv? Get rid of those bad memories by playing it in <strong>OutDoor</strong> at your nearest tennis court!</p>
+        <a href="#">Look for places</a>
+      </div>
+      <div class="content">
+        <h1>Table Tennis.<br></h1>
+        <p>Want to prove to your friend that you're better than them at table tennis? You can do just that at your nearest table tennis place marked on the map!</p>
+        <a href="#">Look for places</a>
+      </div>
+      <div class="content">
+        <h1>Badminton.<br></h1>
+        <p>Don't know the difference between badminton and tennis but don't want to sound stupid? Go ahead and find out at your local badminton court!</p>
+        <a href="#">Look for places</a>
+      </div>
+      <div class="media-icons">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+      </div>
+    </section>
+
+    <script type="text/javascript">
+    //Javacript for responsive navigation menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
+
+    //Javacript for video slider navigation
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+
+    var sliderNav = function(manual){
+      btns.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+
+      contents.forEach((content) => {
+        content.classList.remove("active");
+      });
+
+      btns[manual].classList.add("active");
+      slides[manual].classList.add("active");
+      contents[manual].classList.add("active");
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        sliderNav(i);
+      });
+    });
+    </script>
+
+  </body>
+</html>
